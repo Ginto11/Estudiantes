@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Acme&family=Merriweather:wght@300&family=Permanent+Marker&family=Poppins&family=Roboto+Slab&family=Sansita+Swashed:wght@300&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+	<title>Promedio Estudiantes</title>
+	<link rel="stylesheet" type="text/css" href="CSS\estilos.css">
+</head>
+<body>
+
+	<div id="app">
+
+		<h1 class="titulo"> {{titulo}} </h1>
+
+		<div class="contenedor__inputs">
+			
+			<select style="cursor: pointer;" v-model="nombreAlumno" class="inputs" name="Estudiantes">
+				<option value="">Estudiantes</option>
+				<option value="Andres">Andres</option>
+				<option value="Nelson">Nelson</option>
+				<option value="Yilen">Yilen</option>
+				<option value="Mateo">Mateo</option>
+				<option value="Yuvan">Yuvan</option>
+				<option value="Karen">Karen</option>
+				<option value="Laura">Laura</option>
+				<option value="Ximena">Ximena</option>
+				<option value="Jhonatan">Jhonatan</option>
+			</select>
+
+			<select style="cursor: pointer;" v-model="edadAlumno" class="inputs" name="Materias">
+				<option value="">Materias</option>
+				<option value="Filosofia">Filosofia</option>
+				<option value="Español">Español</option>
+				<option value="Matematicas">Matematicas</option>
+				<option value="Ingles">Ingles</option>
+				<option value="Sociales">Sociales</option>
+				<option value="Ciencias Naturales">Ciencias Naturales</option>
+				<option value="Quimica">Quimica</option>
+				<option value="Etica">Etica</option>
+				<option value="Religion">Religion</option>
+				<option value="Historio">Historia</option>
+				<option value="Biologia">Biologia</option>
+				<option value="Artes">Artes</option>
+				<option value="Danzas">Danzas</option>
+			</select>
+
+			<!-- <input @keyup.enter="agregarAlumno()" class="inputs" v-model="nombreAlumno" type="text" name="" placeholder="Nombre"> -->
+
+			<!-- <input @keyup.enter="agregarAlumno()" class="inputs" v-model="edadAlumno" type="" name="" placeholder="Materia"> -->
+			<input @keyup.enter="agregarAlumno()" class="inputs" v-model.number="nota1" type="number" placeholder="Nota 1">
+			<input @keyup.enter="agregarAlumno()" class="inputs" v-model.number="nota2" type="number" placeholder="Nota 2">
+			<input @keyup.enter="agregarAlumno()" class="inputs" v-model.number="nota3" type="number" placeholder="Nota 3">
+			<input @keyup.enter="agregarAlumno()" class="inputs" v-model.number="nota4" type="number" placeholder="Nota 4">
+		</div>
+		<button class="btn__agregar" v-on:click="agregarAlumno">Agregar</button>
+
+		<ul>
+			<li v-for="alumno of alumnos" class="datos">
+				<div style="display: flex; grid-gap: 10px;">
+					<b>Nombre: </b> {{alumno.name}}
+					<b>Materia: </b> {{alumno.years}} 
+					<b>Nota 1: </b> {{alumno.nota_1}} 
+					<b>Nota 2: </b> {{alumno.nota_2}} 
+					<b>Nota 3: </b> {{alumno.nota_3}} 
+					<b>Nota 4: </b> {{alumno.nota_4}} 
+					<B>Promedio: </B> {{alumno.promedio}}
+				</div>
+				<div>
+					<span class="aprobado" v-if="alumno.promedio >= 3">Aprobado</span>
+					<span class="reprobado" v-if="alumno.promedio < 3">Reprovado</span>
+				</div>
+				
+				
+			</li>
+		</ul>
+		
+	</div>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="JS\funcion.js"></script>
+	
+	
+</body>
+</html>

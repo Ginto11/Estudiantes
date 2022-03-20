@@ -1,0 +1,99 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "Acme";
+}
+
+body{
+	background-image: url("imagenes/descarga.jpg");
+}
+
+#app{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	grid-gap: 30px;
+}
+
+.titulo{
+	margin-top: 30px;
+	background: red;
+	width: 400px;
+	height: 100px;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+}
+
+.contenedor__inputs{
+	display: flex;
+	flex-direction: row;
+	grid-gap: 10px;
+}
+
+.datos{
+	margin: 20px;
+	display: flex;
+	grid-gap: 30px;
+	align-items: center;
+	border-radius: 10px;
+	border: 3px solid #000;
+	justify-content: space-between;
+	background: #FFD800FF;
+	padding: 8px;
+}
+
+.inputs{
+	width: 140px;
+	height: 30px;
+	text-align: center;
+	border: none;
+	outline: none;
+	background: #C0C0C0FF;
+	border-radius: 4px;
+}
+
+.inputs:focus{
+	box-shadow: 0 0 10px #000 inset;
+}
+
+.btn__agregar{
+	margin: 30px;
+	width: 90px;
+	height: 40px;
+	background: #00FFFFFF;
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+}
+
+.btn__agregar:hover{
+	border: 3px solid #0094FF40;
+}
+
+.reprobado{
+	background: #FF0000FF;
+	border-radius: 4px; 
+	padding: 3px;
+}
+
+.aprobado{
+	background: #00FF21FF;
+	border-radius: 4px;
+	padding: 3px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+
+
+
+
